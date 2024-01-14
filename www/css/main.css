@@ -1,0 +1,457 @@
+/* Fonts */
+@font-face {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 300;
+    src: url(../fonts/Roboto-Light.ttf);
+}
+@font-face {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    src: url(../fonts/Roboto-Regular.ttf);
+}
+@font-face {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    src: url(../fonts/Roboto-Bold.ttf);
+}
+@font-face {
+    font-family: 'Roboto';
+    font-style: italic;
+    font-weight: 300;
+    src: url(../fonts/Roboto-LightItalic.ttf);
+}
+@font-face {
+    font-family: 'Roboto';
+    font-style: italic;
+    font-weight: 400;
+    src: url(../fonts/Roboto-Italic.ttf);
+}
+@font-face {
+    font-family: 'Roboto';
+    font-style: italic;
+    font-weight: 700;
+    src: url(../fonts/Roboto-BoldItalic.ttf);
+}
+@font-face {
+    font-family: Entypo;
+    src: url(../fonts/Entypo.ttf);
+}
+
+/* Main */
+html {
+    height: 100%;
+}
+body {
+    height: 100%;
+    margin: 0;
+    font-family: "Roboto", serif;
+    color: #333333;
+    background: white;
+}
+a {
+    outline: none;
+    text-decoration: none;
+    color: white;
+
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+
+}
+p {
+    text-align: center;
+    margin: 8px;
+
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+
+}
+
+.entypo {
+    font-family: "Entypo", sans-serif;
+    font-size: 2em;
+}
+
+/* Headers */
+#mainHeader {
+    z-index: 10;
+    position: fixed;
+    width: 100%;
+    margin: 0;
+    font-size: 24px;
+    line-height: 48px;
+    height: 48px;
+    text-align: left;
+    background: #333333;
+    color: white;
+
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.5);
+}
+#headerLogo {
+    position: fixed;
+    left: 0;
+    top: 0;
+    padding: 4px;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+}
+#shoppingButton {
+    position: fixed;
+    right: 48px;
+    top: 0;
+    width: 48px;
+    height: 48px;
+    text-align: center;
+}
+#headerMenuIcon {
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 48px;
+    height: 48px;
+    text-align: center;
+}
+#headerTitle {
+    position: fixed;
+    left: 48px;
+    top: 0;
+    width: 48px;
+    height: 48px;
+    margin: 0;
+    padding-left: 8px;
+    font-size: 24px;
+    line-height: 48px;
+    text-align: left;
+}
+
+/* Buttons */
+a.button {
+    display: inline-block;
+    text-align: center;
+    font-size: 16px;
+    height: 48px;
+    line-height: 48px;
+    margin: 8px;
+    background: #333333;
+    border-radius: 4px;
+    width: auto;
+}
+a.button.single {
+}
+a.button.danger {
+    background: red;
+}
+
+/* Switches */
+a.switch {
+    text-align: center;
+    font-size: 16px;
+    height: 32px;
+    line-height: 32px;
+    margin: 8px;
+    background: #333333;
+    border-radius: 4px;
+    -webkit-flex: 1;
+    flex: 1;
+    min-width: 25%;
+}
+#settingsTable td {
+    width: 100%;
+}
+#settingsTable tr td:last-child {
+    text-align: center;
+    background: #333333;
+    border-radius: 4px;
+    min-width: 100px;
+}
+#hemisphereSwitchText, #languageSwitchText {
+    padding-left: 10%;
+    font-size: 16px;
+    height: 32px;
+    line-height: 32px;
+    display: inline-block;
+}
+
+#about p {
+    text-align: left;
+}
+#about a {
+    color: #369;
+}
+
+#about a.button {
+    color: white;
+}
+
+#help p {
+    text-align: left;
+}
+
+.categories {
+    margin: 0 8px;
+}
+.categories table {
+    width: 100%;
+}
+.categories table td {
+    text-align: center;
+    border-radius: 4px;
+    margin: 4px;
+    padding: 2px;
+    border: 1px solid white;
+}
+.categories table td img {
+    vertical-align: middle;
+    max-width: 44px;
+    max-height: 44px;
+}
+
+.flexbox-row {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-flow: row wrap;
+    flex-flow: row wrap;
+}
+.flex {
+    -webkit-flex: 1;
+    flex: 1;
+}
+
+/* Item List */
+#items {
+    font-family: "Roboto", sans-serif;
+    font-size: 1em;
+    text-align: center;
+    background: inherit;
+    padding: 16px 8px 48px 8px;
+
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-flow: row wrap;
+    flex-flow: row wrap;
+}
+#items p {
+    display: inline-block;
+    background: none;
+    color: black;
+    padding: 8px;
+    margin: 2px;
+    border-radius: 4px;
+    text-align: center;
+    transition: background-color, color;
+    transition-duration: 0.5s;
+
+    -webkit-flex: 1 0 auto;
+    flex: 1 0 auto;
+
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    user-select: none;
+    touch-callout: none;
+}
+#items p.done {
+    background: none;
+    color: #aaa;
+}
+#items p.suggestion {
+    background: none;
+    border: 2px dashed #aaa;
+    padding: 6px; /* 2 px less because of the border */
+    color: #aaa;
+}
+
+#itemToChange {  /* should be mostly identical to '#items p' */
+    background: #333;
+    padding: 8px;
+    width: auto;
+    margin: 8px;
+    border-radius: 4px;
+    text-align: center;
+    transition: background-color, color;
+    transition-duration: 0.5s;
+    color: white;
+}
+#shopToChange, #shopToDelete {
+    padding: 8px;
+    width: 300px;
+    margin: 32px auto;
+    border-radius: 4px;
+    text-align: center;
+    transition: background-color, color;
+    transition-duration: 0.5s;
+    color: #333333;
+}
+
+.chart {
+    margin: 0 auto;
+    width: 222px;
+    height: 222px;
+    padding-bottom: 8px;
+    padding-top: 8px;
+}
+.legend {
+    text-align: right;
+    font-size: 0.8em;
+    margin: 8px;
+    padding: 8px;
+    background: #222;
+    border-radius: 8px;
+}
+
+/* Tabs */
+.tabs {
+
+}
+
+/* Content of tabs */
+#tab-content {
+    font-family: "Roboto", sans-serif;
+    padding: 48px 8px 8px 8px;
+}
+.tab {
+    width: inherit;
+    display: none;
+}
+.tab.active {
+    display: block;
+}
+
+#addItemButton {
+    display: inline;
+    position: fixed;
+    bottom: 0;
+
+    font-family: "Entypo", sans-serif;
+    z-index: 10;
+
+    text-align: center;
+    height: 48px;
+    line-height: 48px;
+    font-size: 96px;
+
+    padding: 4px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+
+    background: #333333;
+
+    text-shadow: 4px 4px 8px rgba(0,0,0,0.5);
+}
+
+#flattr {
+    display: inline;
+    position: fixed;
+    bottom: 0;
+    z-index: 10;
+}
+
+/* Page content */
+h1 {
+    text-align: right;
+    margin: 16px 0;
+    padding: 8px;
+    font-size: 16px;
+    font-weight: lighter;
+    border-bottom: 2px solid #333333;
+    text-transform: uppercase;
+}
+h2 {
+    text-align: left;
+    margin: 16px 0;
+    padding: 8px;
+    font-size: 12px;
+    border-bottom: 1px solid grey;
+}
+.shopEntry {
+    display: inline-block;
+    padding: 8px;
+    background: #222;
+    border-radius: 4px;
+    font-size: 16px;
+    line-height: 24px;
+
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+/* Menu */
+#menu {
+    z-index: 11;
+    background: #444;
+    position: fixed;
+    margin: 48px 0 0 0;
+    top: 0;
+    right: 0;
+}
+#menu .menuEntry {
+    margin: 0;
+    padding: 16px;
+    border: 0;
+    background: inherit;
+}
+
+#noShopsNotifier, #noStatsNotifier {
+    margin: 8px;
+    padding: 8px;
+    text-align: center;
+    color: #333333;
+    border-radius: 4px;
+}
+#statisticsPieChartLegendTotal {
+    background: white;
+}
+
+/* Toast */
+#toasts {
+    text-align: center;
+    margin-left: -8px;
+    width: calc(100% + 16px);
+    font-size: 16px;
+    line-height: 32px;
+    height: 32px;
+    position: fixed;
+    top: 48px;
+    color: white;
+    z-index: 999; /* always on top */
+}
+.toast {
+    background: black;
+    opacity: 0.7;
+    padding: 0;
+    display: none;
+}
+
+input {
+    text-align: center;
+    margin: 8px;
+    padding: 8px;
+    border-radius: 4px;
+    height: 24px;
+    line-height: 24px;
+    font-size: 16px;
+    border: 0;
+    background: #444;
+    color: white;
+    border-bottom: 1px solid #333333;
+    border-right: 1px solid #333333;
+}
+
+/* Suggestions using suggest.js  */
+#suggest {
+    text-align: center;
+    position: absolute;
+    margin: -8px 8px;
+    width: calc(100% - 32px);
+    background: #444;
+    color: #ddd;
+}
+#suggest div {
+    padding: 1px;
+    display: block;
+    overflow: hidden;
+    white-space: nowrap;
+}

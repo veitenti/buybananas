@@ -1,0 +1,18 @@
+#!/bin/bash
+
+# Prepare localization files
+./localize
+
+# Remove old files
+rm build/*.zip
+rm build/*.apk
+
+# Build the Firefox OS project (and minify the code)
+cd www
+zip -r fox.zip *
+mv fox.zip ../build/fox.zip
+cd ..
+
+# Build the Android 4.4 project
+cordova build android --release
+mv platforms/android/ant-build/CordovaApp-release.apk build/buybananas.apk

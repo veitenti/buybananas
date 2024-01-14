@@ -1,0 +1,9 @@
+#!/bin/bash
+
+# Prepare localization files
+cat www/locales/de/de_text > www/locales/de/app.properties
+cat www/locales/de/de_food >> www/locales/de/app.properties
+cat www/locales/en/en_text > www/locales/en/app.properties
+cat www/locales/en/en_food >> www/locales/en/app.properties
+echo "Prepared localization files"
+

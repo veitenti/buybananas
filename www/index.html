@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>BuyBananas</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Localization -->
+    <link rel="resource" type="application/l10n" href="locales/locales.ini" />
+    <script src="js/l10n.min.js"></script>
+
+    <!-- Dependencies -->
+    <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+    <script type="text/javascript" charset="utf-8" src="cordova_plugins.js"></script>
+    <script src="js/jquery-2.1.1.min.js"></script>
+    <script src="js/jquery.flot.min.js"></script>
+    <script src="js/jquery.flot.categories.min.js"></script>
+    <script src="js/jquery.flot.pie.min.js"></script>
+    <!--<script src="js/inneractive.js"></script>-->
+    <script type="text/javascript" src="js/suggest.js"></script>
+
+    <!-- My own files -->
+    <script src="js/main.js"></script>
+    <link href="css/main.css" type="text/css" rel="stylesheet">
+</head>
+
+<body>
+
+<div class="tabs">
+
+    <!-- Mainheader -->
+    <header id="mainHeader">
+        <a href="#itemList"><img id="headerLogo" src="icons/icon48.png"></a>
+        <p id="headerTitle">BuyBananas</p>
+        <a id="shoppingButton" href="#startShopping" class="entypo">&#59197;</a>
+        <a id="headerMenuIcon" href="#menu" class="entypo">&#9776;</a>
+    </header>
+
+    <!-- Every section is one page -->
+    <div id="tab-content">
+
+        <section id="addItem" class="tab"
+                >
+            <h1 data-l10n-id="new-item"></h1>
+            <input id="newItemName" type="text" placeholder="...">
+            <div id="suggest" style="display:none;"></div>
+            <div class="categories">
+                <table id="addCategoriesTable"></table>
+            </div>
+            <a class="button danger single" href="#itemList" data-l10n-id="cancel"></a>
+        </section>
+
+        <section id="changeItem" class="tab">
+            <h1 data-l10n-id="change-item"></h1>
+            <p id="itemToChange"></p>
+            <div class="categories">
+                <table id="changeCategoriesTable"></table>
+            </div>
+            <a class="button" href="BACK" data-l10n-id="back"></a>
+            <a id="buttonDeleteItem" class="button danger" href="#itemList" data-l10n-id="delete"></a>
+        </section>
+
+        <section id="itemList" class="tab">
+            <div id="items"></div>
+            <a id="addItemButton" href="#addItem">&oplus;</a>
+            <div id="flattr">
+                <a href="https://flattr.com/submit/auto?user_id=TimVe&url=http%3A%2F%2Fwww.buybananas.de" target="_blank">
+                    <img src="icons/flattr-badge-large.png" alt="Flattr this" title="BuyBananas" border="0">
+                </a>
+            </div>
+        </section>
+
+        <section id="startShopping" class="tab">
+            <h1 data-l10n-id="start-shopping-header"></h1>
+            <p data-l10n-id="start-shopping-tour"></p>
+            <div id="startShoppingShopSelector"></div>
+            <a class="button danger single" href="#itemList" data-l10n-id="cancel"></a>
+        </section>
+
+        <section id="finishShopping" class="tab">
+            <p data-l10n-id="are-you-finished-with-shopping"></p>
+            <a class="button danger" href="#itemList" data-l10n-id="no"></a>
+            <a id="finishShoppingButton" class="button" href="#itemList" data-l10n-id="yes"></a>
+        </section>
+
+        <section id="menu" class="tab">
+            <a href="#shops"><p class="menuEntry" data-l10n-id="shops"></p></a>
+            <a href="#statistics"><p class="menuEntry" data-l10n-id="statistics"></p></a>
+            <a href="#settings"><p class="menuEntry" data-l10n-id="settings"></p></a>
+            <a href="#help"><p class="menuEntry" data-l10n-id="help"></p></a>
+            <a href="#about"><p class="menuEntry" data-l10n-id="about"></p></a>
+        </section>
+
+        <section id="statistics" class="tab">
+            <h1 data-l10n-id="statistics"></h1>
+            <div id="noStatsNotifier">
+                <p data-l10n-id="no-stats-yet"></p>
+            </div>
+            <div id="statsContainer">
+                <h2 data-l10n-id="product-categories"></h2>
+                <div id="statisticsPieChart" class="chart"></div>
+                <div id="statisticsPieChartLegendTotal" class="legend"></div>
+                <h2 data-l10n-id="store-visits"></h2>
+                <div id="statisticsBarChart" class="chart"></div>
+                <h2 data-l10n-id="topProducts"></h2>
+                <div id="statisticsTopProductsBarChart" class="chart"></div>
+            </div>
+            <a class="button single" href="#itemList" data-l10n-id="back"></a>
+        </section>
+
+        <section id="shops" class="tab">
+            <h1 data-l10n-id="shops"></h1>
+            <a href="#help">
+                <div id="noShopsNotifier">
+                    <p data-l10n-id="you-have-no-shops-added-yet"></p>
+                    <p data-l10n-id="add-a-new-shop-by-tapping-the-button-below"></p>
+                    <p data-l10n-id="need-help"></p>
+                </div>
+            </a>
+            <div id="shopSelectorBody"></div>
+            <a id="fooCancel" class="button" href="#itemList" data-l10n-id="back"></a>
+            <a class="button" href="#addShop" data-l10n-id="add"></a>
+        </section>
+
+        <section id="changeShop" class="tab">
+            <h1 data-l10n-id="change-shop"></h1>
+            <p id="shopToChange"></p>
+            <a class="button" href="BACK" data-l10n-id="back"></a>
+            <a class="button danger" href="#deleteShop" data-l10n-id="delete"></a>
+        </section>
+
+        <section id="help" class="tab">
+            <h1 data-l10n-id="help"></h1>
+            <h2 data-l10n-id="help-purpose-header"></h2>
+            <p  data-l10n-id="help-purpose"></p>
+            <h2 data-l10n-id="help-add-item-header"></h2>
+            <p  data-l10n-id="help-add-item"></p>
+            <h2 data-l10n-id="help-categories-header"></h2>
+            <p  data-l10n-id="help-categories"></p>
+            <h2 data-l10n-id="help-navigation-header"></h2>
+            <p  data-l10n-id="help-navigation"></p>
+            <h2 data-l10n-id="help-statistics-header"></h2>
+            <p  data-l10n-id="help-statistics"></p>
+            <h2 data-l10n-id="help-suggestions-header"></h2>
+            <p  data-l10n-id="help-suggestions"></p>
+        </section>
+
+        <section id="deleteShop" class="tab">
+            <h1 data-l10n-id="delete-shop"></h1>
+            <p id="shopToDelete"></p>
+            <p data-l10n-id="really-delete-shop"></p>
+            <a class="button" href="BACK" data-l10n-id="back"></a>
+            <a id="buttonDeleteShop" class="button danger" href="#shops" data-l10n-id="delete"></a>
+        </section>
+
+        <section id="addShop" class="tab">
+            <h1 data-l10n-id="add-a-new-shop"></h1>
+            <input id="addedShopName" placeholder="...">
+            <a class="button" href="BACK" data-l10n-id="back"></a>
+            <a id="buttonAddShop" class="button" href="#shops" data-l10n-id="add"></a>
+        </section>
+
+        <section id="about" class="tab">
+            <h1 data-l10n-id="about"></h1>
+            <p data-l10n-id="made-by"><a href="http://www.buybananas.eu"> www.buybananas.eu</a></p>
+            <p data-l10n-id="stores"></p>
+            <p style="text-align: center">
+                <a style="color:#FF4E00">Firefox OS</a>
+            </p>
+            <p style="text-align: center">
+                <a style="color:#A4C639">Android</a>
+            </p>
+            <p><span data-l10n-id="version"></span>: 0.1</p>
+            <p data-l10n-id="feedback"><a href="mailto:veitenti@gmail.com?Subject=BuyBananas_Feedback"> Email</a></p>
+            <p data-l10n-id="licenses"></p>
+            <p>
+                <a href="http://www.entypo.com/">Entypo</a> -
+                <a href="http://danielbruce.se/"> Daniel Bruce</a> -
+                <a href="http://creativecommons.org/licenses/by-sa/3.0/"> CC BY-SA 3.0</a>
+            </p>
+            <p>
+                <a href="http://www.google.com/fonts/specimen/Roboto">Roboto</a> -
+                <a href="http://plus.google.com/110879635926653430880/about"> Christian Robertson</a> -
+                <a href="http://www.apache.org/licenses/LICENSE-2.0.html"> Apache License 2.0</a>
+            </p>
+            <p>
+                <a href="http://cordova.apache.org/">Apache Cordova</a> -
+                <a href="http://www.apache.org/"> Apache Software Foundation</a> -
+                <a href="http://www.apache.org/licenses/LICENSE-2.0.html"> Apache License 2.0</a>
+            </p>
+            <p>
+                <a href="https://jquery.org">jQuery</a> -
+                <a href="https://jquery.org/team"> jQuery Team</a> -
+                <a href="http://opensource.org/licenses/MIT"> MIT License</a>
+            </p>
+            <p>
+                <a href="https://github.com/fabi1cazenave/webL10n">webL10n</a> -
+                <a href="https://github.com/fabi1cazenave"> Fabien Cazenave</a> -
+                <a href="http://opensource.org/licenses/MIT"> MIT License</a>
+            </p>
+            <p>
+                <a href="https://github.com/onozaty/suggest.js">suggest.js</a> -
+                <a href="https://github.com/onozaty"> onozaty</a> -
+                <a href="http://opensource.org/licenses/MIT"> MIT License</a>
+            </p>
+            <p>
+                <a href="http://www.flotcharts.org">Flot</a> -
+                <a href="https://github.com/flot"> David Schnur / Nick Schonning / Ole Laursen</a> -
+                <a href="http://opensource.org/licenses/MIT"> MIT License</a>
+            </p>
+            <p>
+                <a href="http://www.freepik.com/">Freepik Food Icons</a> -
+                <a href="http://www.freepik.com/"> Freepik</a> -
+                <a href="http://www.freepik.com/terms_of_use"> License</a>
+            </p>
+            <a class="button" href="BACK" data-l10n-id="back"></a>
+            <a class="button danger" href="#reset" data-l10n-id="reset"></a>
+        </section>
+
+        <section id="reset" class="tab">
+            <h1 data-l10n-id="reset"></h1>
+            <div id="resetWarning">
+                <p data-l10n-id="reset-warning"></p>
+            </div>
+            <a class="button" href="BACK" data-l10n-id="back"></a>
+            <a id="buttonFactoryReset" class="danger button" href="#itemList" data-l10n-id="reset"></a>
+        </section>
+
+        <section id="settings" class="tab">
+            <h1 data-l10n-id="settings"></h1>
+            <table id="settingsTable">
+                <tr>
+                    <td><span id="hemisphereSwitchText" class="switch-text" data-l10n-id="hemisphere"></span></td>
+                    <td><a id="hemisphereSwitch" class="switch" href="#settings"></a></td>
+                </tr>
+                <tr>
+                    <td><span id="languageSwitchText" class="switch-text" data-l10n-id="language"></span></td>
+                    <td><a id="languageSwitch" class="switch" href="#settings"></a></td>
+                </tr>
+            </table>
+        </section>
+
+    </div>
+
+    <!-- Toast message -->
+    <div id="toasts"></div>
+
+</div>
+
+</body>
+</html>

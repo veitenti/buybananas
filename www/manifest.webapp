@@ -1,0 +1,34 @@
+{
+    "version": "0.1.6",
+    "name": "BuyBananas (Beta)",
+    "description": "BuyBananas helps you to organize your shopping. You are already carrying a smart phone with you, why not let it help you with your shopping in a more \"smart\" way than a piece of paper could? Some of the features are suggestions based on your previous purchases, suggestions based on seasonal products, shopping statistics and the ability to learn where which product is placed in the shops you are visiting regularly to sort your shopping list accordingly, so you don't have to read through the whole list every few steps to check if you are not missing something there.",
+    "launch_path": "/index.html",
+    "icons": {
+        "16": "/icons/icon16.png",
+        "32": "/icons/icon32.png",
+        "48": "/icons/icon48.png",
+        "64": "/icons/icon64.png",
+        "128": "/icons/icon128.png",
+        "256": "/icons/icon256.png",
+        "512": "/icons/icon512.png",
+        "30": "/icons/icon30.png",
+        "60": "/icons/icon60.png",
+        "90": "/icons/icon90.png",
+        "120": "/icons/icon120.png"
+    },
+    "developer": {
+        "name": "Tim Veitengruber",
+        "url": "https://www.buybananas.eu"
+    },
+    "locales": {
+        "de": {
+            "description": "BuyBananas hilft dir deine täglichen Einkäufe zu organisieren. Diese App ist dabei weit mehr als eine einfache digitale Einkaufsliste. Wenn du schon ein \"smartes\" Handy mit dir herumträgst, warum sollte es dir nicht helfen deine Einkäufe etwas \"smarter\" zu gestalten? Einige der Funktionen umfassen derzeit Vorschläge zu Produkten, die du regulär kaufst und Produkte die zurzeit Saison haben (etwa Spargel). Zudem lernt die App durch die Benutzung automatisch in welcher Reihenfolge du im Laden auf bestimmte Produkte triffst und kann sie in dieser Reihenfolge sortieren, so dass du nicht in jedem Gang die gesamte Liste überfliegen musst um nicht irgendetwas zu vergessen. Natürlich kannst du dir zu deinem Einkaufsverhalten auch ausführliche Statistiken anzeigen lassen."
+        }
+    },
+    "type": "privileged",
+    "permissions": {},
+    "installs_allowed_from": [
+        "*"
+    ],
+    "default_locale": "en-US"
+}

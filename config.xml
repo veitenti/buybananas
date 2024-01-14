@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="de.buybananas" version="0.1.6" android-versionCode="6" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>BuyBananas</name>
+
+    <!-- Icons -->
+    <platform name="android">
+        <icon src="www/icons/mdpi.png" density="mdpi" />
+        <icon src="www/icons/hdpi.png" density="hdpi" />
+        <icon src="www/icons/xhdpi.png" density="xhdpi" />
+        <icon src="www/icons/xxhdpi.png" density="xxhdpi" />
+        <icon src="www/icons/xxxhdpi.png" density="xxxhdpi" />
+    </platform>
+
+    <preference name="Orientation" value="portrait" />
+
+    <preference name="android-minSdkVersion" value="15" />
+    <preference name="android-targetSdkVersion" value="15" />
+
+    <description>
+
+    </description>
+    <author email="veitenti@posteo.de" href="http://www.buybananas.de">
+        Tim Veitengruber
+    </author>
+    <content src="index.html" />
+    <access origin="*" />
+</widget>

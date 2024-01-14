@@ -1,0 +1,18 @@
+rsvg-convert -w 16 -h 16 -o icon16.png icon.svg
+rsvg-convert -w 32 -h 32 -o icon32.png icon.svg
+rsvg-convert -w 48 -h 48 -o icon48.png icon.svg
+rsvg-convert -w 64 -h 64 -o icon64.png icon.svg
+rsvg-convert -w 128 -h 128 -o icon128.png icon.svg
+rsvg-convert -w 256 -h 256 -o icon256.png icon.svg
+rsvg-convert -w 512 -h 512 -o icon512.png icon.svg
+
+rsvg-convert -w 30 -h 30 -o icon30.png icon.svg
+rsvg-convert -w 60 -h 60 -o icon60.png icon.svg
+rsvg-convert -w 90 -h 90 -o icon90.png icon.svg
+rsvg-convert -w 120 -h 120 -o icon120.png icon.svg
+
+rsvg-convert -w 48 -h 48 -o mdpi.png icon.svg
+rsvg-convert -w 72 -h 72 -o hdpi.png icon.svg
+rsvg-convert -w 96 -h 96 -o xhdpi.png icon.svg
+rsvg-convert -w 144 -h 144 -o xxhdpi.png icon.svg
+rsvg-convert -w 192 -h 192 -o xxxhdpi.png icon.svg

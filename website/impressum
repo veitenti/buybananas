@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="BuyBananas helps you to organize your shopping. You are already carrying a smartphone with you, why not let it help you with your shopping in a more 'smart' way than a piece of paper could?">
+  <meta name="keywords" content="shopping, shop, shopping list">
+  <title>BuyBananas | Shopping List for your every day shopping needs</title>
+  <link rel="icon" type="image/png" href="icon.png"/>
+  <link href="buybananas.css" type="text/css" rel="stylesheet">
+</head>
+
+<body>
+
+    <h1 style="text-align: left; padding: 16px">Impressum</h1>
+
+    <img id="impressum_img" src="impressum.png" alt="Tim Veitengruber, Morgenstr. 41, 76137 Karlsruhe, veitenti@gmail.com, 015786763744">
+
+</body>
+</html>
